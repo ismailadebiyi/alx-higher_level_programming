@@ -6,4 +6,4 @@ def uppercase(str):
             cvt += chr(ord(c) - 32)
         else:
             cvt += c
-    print(cvt)
+    print("{}".format(cvt))
