@@ -1,4 +1,8 @@
 #include <Python.h>
+/**
+ * print_python_list_info - print python information
+ * @p: address of pyObject
+ */
 
 void print_python_list_info(PyObject *p)
 {
