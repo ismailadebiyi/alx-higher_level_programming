@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import pytext
+__import__ ("pytext")
