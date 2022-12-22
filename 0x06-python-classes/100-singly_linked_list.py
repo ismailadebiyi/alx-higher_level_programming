@@ -37,6 +37,7 @@ class Node:
         else:
             raise TypeError("next_node must be a Node object")
 
+
 """
 SinglyLinkedList class
 creats a linkedlist of sorted Node objs and prints
