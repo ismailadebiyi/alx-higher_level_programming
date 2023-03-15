@@ -6,7 +6,7 @@ module.exports.Rectangle = function Rectangle (w, h) {
     this.height = h;
   }
   this.print = function () {
-    for (var i = 0; i < h; i++) {
+    for (let i = 0; i < h; i++) {
       console.log(Array(w + 1).join('X'));
     }
   };
