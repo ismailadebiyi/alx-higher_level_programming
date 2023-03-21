@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Lists all states from a database
+""" Lists all states from a database """
 
 if __name__ == "__main__":
     import MySQLdb
