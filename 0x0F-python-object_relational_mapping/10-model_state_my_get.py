@@ -24,7 +24,7 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State).filter_by(name=sch)
-    if query is None:
-        print("Nothing")
-    else:
-        print(instance.id, instance.name, sep=": ")
+    try:
+        print(query[0].id)
+    except IndexError:
+        print("Not found")
