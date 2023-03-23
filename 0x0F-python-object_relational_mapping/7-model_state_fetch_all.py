@@ -18,6 +18,8 @@ if __name__ == "__main__":
     except Exception as err:
         print(err)
         exit(1)
+
+
     connection = engine.connect()
     states = engine.execute("""
         SELECT * FROM states
