@@ -22,8 +22,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sqlalchemy.orm.sessionmaker(bind=engine)
     session = Session()
-    for instance in session.query(State).order_by(State.id):
-        if states is None:
-            print("None")
-        else:
+    if states is None:
+        print("None")
+    else:
+        for instance in session.query(State).order_by(State.id):
             print(instance.id, instance.name, sep=": ")
