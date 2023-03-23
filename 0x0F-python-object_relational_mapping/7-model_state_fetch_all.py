@@ -19,14 +19,11 @@ if __name__ == "__main__":
         print(err)
         exit(1)
 
-
-    connection = engine.connect()
-    states = engine.execute("""
-        SELECT * FROM states
-        ORDER BY states.id ASC
-    """)
-    if states is None:
-        print("None")
-    else:
-        print("\n".join(["{:d}: {:s}".format(row[0], row[1]) for row in states]))
-    connection.close()
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    for instance in session.query(State).order_by(State.id):
+        if states is None:
+            print("None")
+        else:
+            print("\n".join(["{:d}: {:s}".format(row[0], row[1]) for row in states]))
