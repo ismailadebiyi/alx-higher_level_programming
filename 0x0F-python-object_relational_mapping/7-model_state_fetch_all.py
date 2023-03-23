@@ -26,4 +26,4 @@ if __name__ == "__main__":
         if states is None:
             print("None")
         else:
-            print("\n".join(["{:d}: {:s}".format(row[0], row[1]) for row in states]))
+            print(instance.id, instance.name, sep=": "))
