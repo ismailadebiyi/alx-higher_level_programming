@@ -24,8 +24,7 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State).filter_by(name=sch)
-    if query.first() is None:
-        print("Not Found")
+    if query is None:
+        print("Nothing")
     else:
-        print("{:d}".format(query[0].id))
-    session.close()
+        print(instance.id, instance.name, sep=": ")
