@@ -10,7 +10,6 @@ if __name__ == "__main__":
         exit(1)
 
     usr, pwd, dbe = argv[1], argv[2], argv[3]
-    sch = argv[4].split("'")[0]
 
     try:
         database = MySQLdb.Connect(user=usr, passwd=pwd, db=dbe, port=3306)
@@ -23,7 +22,7 @@ if __name__ == "__main__":
         JOIN states ON cities.state_id = states.id
         WHERE states.name = %s
         ORDER BY cities.id ASC
-    """, (sch,))
+    """, (argv[4],))
     print(", ".join([row[0] for row in cursor.fetchall()]))
     cursor.close()
     database.close()
